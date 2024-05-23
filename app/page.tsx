@@ -31,10 +31,3 @@ export default function Page() {
     </main>
   );
 }
-
-//iebfenfkjenflkenflenkwlfnekflwkelf
-
-
-// fgdhfg
-//kebnufeknkfjenefokfekfnenkfenlfelflekfeflekfefekflekelfkenf
-
