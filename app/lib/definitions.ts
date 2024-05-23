@@ -31,7 +31,7 @@ export type Invoice = {
 };
 
 
-export type sukucadang = {
+export type sukucadang = {}
 
 
 export type LatestInvoice = {
