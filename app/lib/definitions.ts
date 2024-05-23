@@ -26,7 +26,6 @@ export type montir = {
 };
 
 export type sukucadang = {
-
   id: string;
   name: string;
   buyprice: number; 
