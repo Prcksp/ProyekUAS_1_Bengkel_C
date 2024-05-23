@@ -10,7 +10,7 @@ export type User = {
 };
 
 export type Customer = {
-  id: string;
+  id_customer: string;
   name: string;
   phonenumber: Number;
   platenumber: string;
@@ -35,13 +35,12 @@ export type sukucadang = {
 };
 
 export type service = {
-  id: string;
   name: string;
-  date: string;
+  date: Date;
   id_customer: string;
   id_montir: string;
-  id_kendaraan: string;
-  cost_sukucadang: number;
+  platenumber: string;
+  price: number;
   cost_service: number;
   total: number; 
   payment: string;
