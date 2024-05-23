@@ -26,10 +26,8 @@ export type montir = {
 
 
 export type sukucadang = {
-  id: string;
   name: string;
-  buyprice: number; 
-  sellingprice: number;
+  price: string;
   stok: number; 
   merk: string; 
 };
