@@ -72,6 +72,40 @@ const customers = [
   },
 ];
 
+const montir = [
+  {
+    id_montir: '410544b2-4001-4271-9855-mtr-0022',
+    nama_montir: 'Johan Delby',
+    nomor_telepon: '0894-1234-3412',
+    keahlian: 'Ganti Ban',
+  },
+  {
+    id_montir: '410544b2-4001-4271-9855-mtr-0043',
+    nama_montir: 'Aldo Tanu Wijaya',
+    nomor_telepon: '0843-2345-1332',
+    keahlian: 'serba bisa',
+  },
+  {
+    id_montir: '410544b2-4001-4271-9855-mtr-0048',
+    nama_montir: 'Irvandi Ferdinan',
+    nomor_telepon: '0855-9983-5435',
+    keahlian: 'Pemasangan body kendaraan',
+  },
+  {
+    id_montir: '410544b2-4001-4271-9855-mtr-0049',
+    nama_montir: 'Felix Sampurna',
+    nomor_telepon: '0853-4323-5454',
+    keahlian: 'Bongkar muat piston',
+  },
+  {
+    id_montir: '410544b2-4001-4271-9855-mtr-0076',
+    nama_montir: 'BennjyFishy',
+    nomor_telepon: '0853-4366-3424',
+    keahlian: 'Mengatur jalur kelistrikan Lampu',
+  },
+];
+
+
 const invoices = [
   {
     customer_id: customers[0].id,
