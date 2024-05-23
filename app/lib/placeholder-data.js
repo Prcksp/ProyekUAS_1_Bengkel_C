@@ -115,7 +115,7 @@ const montir = [
   },
 ];
 
-const invoices = [
+const sukucadang = [
   {
     customer_id: customers[0].id,
     amount: 15795,
@@ -208,7 +208,7 @@ const invoices = [
   },
 ];
 
-const revenue = [
+const service = [
   { month: 'Jan', revenue: 2000 },
   { month: 'Feb', revenue: 1800 },
   { month: 'Mar', revenue: 2200 },

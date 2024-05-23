@@ -12,17 +12,16 @@ export type User = {
 export type Customer = {
   id: string;
   name: string;
-  number: Number;
-  plat: string;
-  merk: string;
+  phonenumber: Number;
+  platenumber: string;
+  image_url:  string;
 };
 
 export type montir = {
-  id: string;
-  montir_id: string;
-  amount: number;
-  date: string;
-  skill: string;
+  id_montir: string;
+  nama_montir: string
+  nomor_telepon: string;
+  keahlian: string;
 };
 
 
