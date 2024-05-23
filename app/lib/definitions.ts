@@ -48,5 +48,3 @@ export type service = {
   payment: string;
 
 };
-
-// catatan
