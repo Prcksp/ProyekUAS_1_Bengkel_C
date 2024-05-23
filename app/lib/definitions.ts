@@ -12,8 +12,12 @@ export type User = {
 export type Customer = {
   id: string;
   name: string;
+  number: Number;
+  plat: string;
+  merk: string;
   email: string;
   image_url: string;
+
 };
 
 export type Invoice = {
@@ -27,8 +31,11 @@ export type Invoice = {
 };
 
 
+export type sukucadang = {
+
 
 export type LatestInvoice = {
+
   id: string;
   name: string;
   image_url: string;
