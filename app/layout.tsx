@@ -1,6 +1,7 @@
 import '@/app/ui/global.css';
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
 import { Metadata } from 'next';
-import { kanit } from '@/app/ui/fonts';
 
 
 export const metadata: Metadata = {
@@ -19,7 +20,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={'${kanit.className}antialiased'}>{children}</body>
+      <body >
+        <Navbar />
+        <main className='relative overflow-hidden'>
+         {children} 
+        </main>
+        <Footer />
+      </body>
     </html>
   );
 }
