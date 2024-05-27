@@ -7,6 +7,8 @@ import { AtSymbolIcon, EnvelopeIcon, KeyIcon } from '@heroicons/react/24/outline
  
 export default function LoginPage() {
   return (
+
+    
     <div className='flex flex-col items-center justify-center min-h-screen py-2 bg-gray-100'>
      
 
@@ -102,6 +104,6 @@ export default function LoginPage() {
       </main>
 
     </div>
-   
+    
   );
 }
