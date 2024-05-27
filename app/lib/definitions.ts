@@ -12,7 +12,7 @@ export type User = {
 export type Customer = {
   id_customer: string;
   name: string;
-  phonenumber: Number;
+  phonenumber: number;
   platenumber: string;
   image_url:  string;
 };
