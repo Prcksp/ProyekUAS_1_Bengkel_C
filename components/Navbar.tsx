@@ -28,7 +28,7 @@ const Navbar = () => {
             ))}
          </ul>
 
-         <ul className="hidden h-full gap-12 lg:flex">
+         {/* <ul className="hidden h-full gap-12 lg:flex">
             {LOGIN_BTN.map((link) =>(
              <Link href={link.href} key={link.key}
              className="regular-16 text-gray-50 flexCenter
@@ -36,19 +36,22 @@ const Navbar = () => {
                  {link.label}
              </Link>
             ))}
-         </ul>
+         </ul> */}
 
-       {/* <div className="lg:flexCenter hidden">
-        
+       <div className="lg:flexCenter hidden">
+        <a href='/login'>
            <Button
            type="button"
            title="Login"
            icon="/user.svg"
            variant="btn_dark_green"
-            />
+            >
+             
+              </Button>
+        </a>
            
        </div>
-        */}
+       
 
        <Image
         src="menu.svg"
