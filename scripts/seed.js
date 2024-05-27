@@ -1,7 +1,7 @@
 const { db } = require('@vercel/postgres');
 const {
-  customers,
   users,
+  customers,
   montir,
   sukucadang,
   service,
