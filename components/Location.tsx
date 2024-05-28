@@ -22,8 +22,8 @@ const Gear = ({ backgroundImage, title, subtitle, peopleJoined }: GearProps) => 
           />
         </div>
         <div className="flex flex-col gap-1">
-          <h4 className="bold-18  w-full text-white bg bg-gray-600 rounded-2xl">{title}</h4>
-          <p className="regular-14 w-full text-white bg-gray-600 rounded-3xl ">{subtitle}</p>
+          <h4 className="flexCenter bold-20  w-full text-white bg bg-gray-600 rounded-2xl">{title}</h4>
+          <p className="flexCenter regular-14 w-full text-white bg-gray-600 rounded-3xl ">{subtitle}</p>
         </div>
       </div>
 

@@ -1,9 +1,10 @@
 export const NAV_LINKS = [
     { href: '/dashboard', key: 'home', label: 'Dashboard' },
     { href: '/dashboard/customers', key: 'customers', label: 'Customers' },
-    { href: '/dashboard/montir', key: 'montir', label: 'montir' },
+    { href: '/dashboard/montir', key: 'montir', label: 'Montir' },
     { href: '/dashboard/sukucadang', key: 'stock', label: 'Stock' },
     { href: '/dashboard/service', key: 'services', label: 'Services' },
+    // { href: '/login', key: 'login', label: 'Login' },
   ];
   
   // CAMP SECTION
@@ -14,6 +15,10 @@ export const NAV_LINKS = [
     '/person-4.png',
   ];
   
+  export const LOGIN_BTN =[
+    { href: '/login', key: 'login', label: 'Log in', icon:'/user.svg',variant:"btn_dark_green" },
+  ]
+
   // FEATURES SECTION
   export const FEATURES = [
     {
@@ -51,7 +56,7 @@ export const NAV_LINKS = [
     {
       title: 'Learn More',
       links: [
-        'About Hilink',
+        'About RJP',
         'Press Releases',
         'Environment',
         'Jobs',
@@ -61,25 +66,25 @@ export const NAV_LINKS = [
     },
     {
       title: 'Our Community',
-      links: ['Climbing xixixi', 'Hiking hilink', 'Hilink kinthill'],
+      links: ['Ngebengkels', 'Bengkel Bros', 'Bangkel'],
     },
   ];
   
   export const FOOTER_CONTACT_INFO = {
     title: 'Contact Us',
     links: [
-      { label: 'Admin Officer', value: '123-456-7890' },
-      { label: 'Email Officer', value: 'hilink@akinthil.com' },
+      { label: 'Admin Officer', value: '0818-9302-xxxx' },
+      { label: 'Email Officer', value: 'rjpworkshop@bengkel.com' },
     ],
   };
   
   export const SOCIALS = {
     title: 'Social',
     links: [
-      '/facebook.svg',
-      '/instagram.svg',
-      '/twitter.svg',
-      '/youtube.svg',
-      '/wordpress.svg',
+      '/facebookz.svg',
+      '/instagramz.svg',
+      '/twitterz.svg',
+      '/youtubez.svg',
+      '/wordpressz.svg',
     ],
   };
