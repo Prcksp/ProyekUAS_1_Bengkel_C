@@ -1,9 +1,8 @@
 import React from 'react'
-import Home from '../page'
 
 const page = () => {
   return (
-    <p>halaman dashboard</p>
+    <div>page</div>
   )
 }
 

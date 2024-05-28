@@ -18,7 +18,7 @@ const Hero = () => {
                 className="absolute left-[-5px] top-[-30px] w-10 lg:w-[50px]"
             />
             <h1 className='bold-52 lg:bold-88'>RJP Workshop</h1>
-            <p className='reglar-16 mt-6 text-gray-30 xl:max-w-[520px]'>
+            <p className='reglar-16 mt-6 text-black xl:max-w-[520px]'>
             Welcome to the Rejuvenation & Joyful Productivity (RJP) Workshop, a transformative experience designed to help you rediscover balance, enhance your well-being, and boost your productivity in a joyful and sustainable way. This workshop is perfect for professionals, creatives, and anyone looking to integrate more harmony and efficiency into their daily lives.
             </p>
 

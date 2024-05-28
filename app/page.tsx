@@ -1,4 +1,5 @@
-import Features from "@/components/Features";
+
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Location from "@/components/Location";
 
@@ -7,7 +8,7 @@ export default function Home() {
     <>
           <Hero />
           <Location />
-          <Features />
+          
     </>
   )
 }
