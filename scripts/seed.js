@@ -60,7 +60,7 @@ async function seedCustomers(client) {
       customers.map(
         (customer) => client.sql`
         INSERT INTO customers (id, name, phonenumber, platenumber, image_url)
-        VALUES (${customer.id_customer}, ${customer.name}, ${customer.phonenumber}, ${customer.platenumber}, ${customer.image_url})
+        VALUES (${customer.id}, ${customer.name}, ${customer.phonenumber}, ${customer.platenumber}, ${customer.image_url})
         ON CONFLICT (id) DO NOTHING;
       `,
       ),
@@ -93,7 +93,7 @@ async function seedMontir(client) {
       montir.map(
         (item) => client.sql`
         INSERT INTO montir (id, nama_montir, nomor_telepon, keahlian)
-        VALUES (${item.id_montir}, ${item.nama_montir}, ${item.nomor_telepon}, ${item.keahlian})
+        VALUES (${item.id}, ${item.nama_montir}, ${item.nomor_telepon}, ${item.keahlian})
         ON CONFLICT (id) DO NOTHING;
       `,
       ),
@@ -113,6 +113,7 @@ async function seedSukucadang(client) {
   try {
     const createTable = await client.sql`
       CREATE TABLE IF NOT EXISTS sukucadang (
+        id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
         price VARCHAR(255) NOT NULL,
         stok INT NOT NULL,
@@ -123,9 +124,9 @@ async function seedSukucadang(client) {
     const insertedSukucadang = await Promise.all(
       sukucadang.map(
         (item) => client.sql`
-        INSERT INTO sukucadang (name, price, stok, merk)
-        VALUES (${item.name}, ${item.price}, ${item.stok}, ${item.merk})
-        ON CONFLICT (name) DO NOTHING;
+        INSERT INTO sukucadang (id,name, price, stok, merk)
+        VALUES (${item.id},${item.name}, ${item.price}, ${item.stok}, ${item.merk})
+        ON CONFLICT (id) DO NOTHING;
       `,
       ),
     );
@@ -147,23 +148,22 @@ async function seedService(client) {
     const createTable = await client.sql`
       CREATE TABLE IF NOT EXISTS service (
         id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-        name VARCHAR(255) NOT NULL,
-        date DATE NOT NULL,
         id_customer UUID NOT NULL,
-        id_montir UUID NOT NULL,
-        platenumber VARCHAR(255) NOT NULL,
-        price INT NOT NULL,
+        id_montir UUID NOT NULL, 
+        sukucadang_price INT NOT NULL,
+        amount INT NOT NULL,
         cost_service INT NOT NULL,
         total INT NOT NULL,
-        payment VARCHAR(255) NOT NULL
+        payment VARCHAR(255) NOT NULL,
+        date DATE NOT NULL
       );
     `;
 
     const insertedService = await Promise.all(
       service.map(
         (item) => client.sql`
-        INSERT INTO service (name, date, id_customer, id_montir, platenumber, price, cost_service, total, payment)
-        VALUES (${item.name}, ${item.date}, ${item.id_customer}, ${item.id_montir}, ${item.platenumber}, ${item.price}, ${item.cost_service}, ${item.total}, ${item.payment})
+        INSERT INTO service (id_customer, id_montir, sukucadang_price, amount, cost_service, total, payment, date)
+        VALUES (${item.id_customer}, ${item.id_montir}, ${item.sukucadang_price}, ${item.amout}, ${item.cost_service}, ${item.total}, ${item.payment}, ${item.date})
         ON CONFLICT (id) DO NOTHING;
       `,
       ),
