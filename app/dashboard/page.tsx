@@ -4,7 +4,7 @@ import CardWrapper from '@/app/ui/dashboard/cards';
 import { poppins } from '@/app/assets/fonts';
 import { Metadata } from 'next';
 import LatestMontir from './montir/latest-montir';
-import LatestService from './service/latest-service';
+import LatestService from './service/lastest-service';
 import LatestCustomers from './customers/latest-customers';
 import LatestStock from './stock/latest-stock';
 import {

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Button from '@/app/components/Button';
+import Button from '@/app/components/button';
 
 export function View() {
   return (
