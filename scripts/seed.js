@@ -21,6 +21,8 @@ async function seedUsers(client) {
       );
     `;
 
+    console.log(`Created "users" table`);
+
     const insertedUsers = await Promise.all(
       users.map(async (user) => {
         const hashedPassword = await bcrypt.hash(user.password, 10);
@@ -31,6 +33,8 @@ async function seedUsers(client) {
       `;
       }),
     );
+
+    console.log(`Seeded ${insertedUsers.length} users`);
 
     return {
       createTable,
@@ -50,11 +54,13 @@ async function seedCustomers(client) {
       CREATE TABLE IF NOT EXISTS customers (
         id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
-        phonenumber BIGINT NOT NULL,
+        phonenumber VARCHAR(255) NOT NULL,
         platenumber VARCHAR(255) NOT NULL,
         image_url VARCHAR(255) NOT NULL
       );
     `;
+
+    console.log(`Created "customers" table`);
 
     const insertedCustomers = await Promise.all(
       customers.map(
@@ -65,6 +71,8 @@ async function seedCustomers(client) {
       `,
       ),
     );
+
+    console.log(`Seeded ${insertedCustomers.length} customers`);
 
     return {
       createTable,
@@ -89,6 +97,8 @@ async function seedMontir(client) {
       );
     `;
 
+    console.log(`Created "montir" table`);
+
     const insertedMontir = await Promise.all(
       montir.map(
         (item) => client.sql`
@@ -98,6 +108,8 @@ async function seedMontir(client) {
       `,
       ),
     );
+
+    console.log(`Seeded ${insertedMontir.length} montir`);
 
     return {
       createTable,
@@ -114,22 +126,26 @@ async function seedSukucadang(client) {
     const createTable = await client.sql`
       CREATE TABLE IF NOT EXISTS sukucadang (
         id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-        name VARCHAR(255) NOT NULL,
-        price VARCHAR(255) NOT NULL,
+        sukucadang_name VARCHAR(255) NOT NULL,
+        sukucadang_price INT NOT NULL,
         stok INT NOT NULL,
         merk VARCHAR(255) NOT NULL
       );
     `;
 
+    console.log(`Created "sukucadang" table`);
+
     const insertedSukucadang = await Promise.all(
       sukucadang.map(
         (item) => client.sql`
-        INSERT INTO sukucadang (id,name, price, stok, merk)
-        VALUES (${item.id},${item.name}, ${item.price}, ${item.stok}, ${item.merk})
+        INSERT INTO sukucadang (id,sukucadang_name, sukucadang_price, stok, merk)
+        VALUES (${item.id},${item.sukucadang_name}, ${item.sukucadang_price}, ${item.stok}, ${item.merk})
         ON CONFLICT (id) DO NOTHING;
       `,
       ),
     );
+
+    console.log(`Seeded ${insertedSukucadang.length} sukucadang`);
 
     return {
       createTable,
@@ -150,6 +166,7 @@ async function seedService(client) {
         id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
         id_customer UUID NOT NULL,
         id_montir UUID NOT NULL, 
+        id_sukucadang UUID NOT NULL, 
         sukucadang_price INT NOT NULL,
         amount INT NOT NULL,
         cost_service INT NOT NULL,
@@ -159,15 +176,19 @@ async function seedService(client) {
       );
     `;
 
+    console.log(`Created "service" table`);
+
     const insertedService = await Promise.all(
       service.map(
         (item) => client.sql`
-        INSERT INTO service (id_customer, id_montir, sukucadang_price, amount, cost_service, total, payment, date)
-        VALUES (${item.id_customer}, ${item.id_montir}, ${item.sukucadang_price}, ${item.amout}, ${item.cost_service}, ${item.total}, ${item.payment}, ${item.date})
+        INSERT INTO service (id, id_customer, id_montir, id_sukucadang, sukucadang_price, amount, cost_service, total, payment, date)
+        VALUES (${item.id}, ${item.id_customer}, ${item.id_montir}, ${item.id_sukucadang}, ${item.sukucadang_price}, ${item.amount}, ${item.cost_service}, ${item.total}, ${item.payment}, ${item.date})
         ON CONFLICT (id) DO NOTHING;
       `,
       ),
     );
+
+    console.log(`Seeded ${insertedService.length} services`);
 
     return {
       createTable,
