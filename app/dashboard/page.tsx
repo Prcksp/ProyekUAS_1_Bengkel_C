@@ -1,10 +1,50 @@
-import React from 'react'
-import Home from '../page'
+import React from 'react';
+import { Suspense } from 'react';
+import CardWrapper from '@/app/ui/dashboard/cards';
+import { poppins } from '@/app/assets/fonts';
+import { Metadata } from 'next';
+import LatestMontir from './montir/latest-montir';
+import LatestService from './service/latest-service';
+import LatestCustomers from './customers/latest-customers';
+import LatestStock from './stock/latest-stock';
+import {
+  LatestMontirSkeleton,
+  CardsSkeleton,
+  LatestCustomersSkeleton,
+  LatestStockSkeleton,
+  LatestServiceSkeleton,
+} from '@/app/dashboard/skeletons';
 
-const page = () => {
+export const metadata: Metadata = {
+  title: 'Dashboard',
+};
+
+export default function Page() {
   return (
-    <p>halaman dashboard</p>
-  )
+    <main>
+      <h1 className={`${poppins.className} mb-4 text-xl md:text-2xl`}>
+        Dashboard
+      </h1>
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <Suspense fallback={<CardsSkeleton />}>
+          <CardWrapper />
+        </Suspense>
+      </div>
+      <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
+        {/* <LatestCustomers /> */}
+        <Suspense fallback={<LatestCustomersSkeleton />}>
+          <LatestCustomers />
+        </Suspense>
+        <Suspense fallback={<LatestMontirSkeleton />}>
+          <LatestMontir />
+        </Suspense>
+        <Suspense fallback={<LatestStockSkeleton />}>
+          <LatestStock />
+        </Suspense>
+        <Suspense fallback={<LatestServiceSkeleton />}>
+          <LatestService />
+        </Suspense>
+      </div>
+    </main>
+  );
 }
-
-export default page
