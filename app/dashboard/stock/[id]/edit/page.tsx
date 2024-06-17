@@ -1,5 +1,5 @@
 import Form from '@/app/dashboard/stock/edit-form';
-import Breadcrumbs from '@/app/dashboard/stock/breadcrumbs';
+import Breadcrumbs from '@/app/dashboard/stock/breadcrums';
 import { fetchStockById } from '@/app/lib/data';
 
 export default async function Page({ params }: { params: { id: string } }) {

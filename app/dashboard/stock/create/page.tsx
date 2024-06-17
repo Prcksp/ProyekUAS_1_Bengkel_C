@@ -1,5 +1,5 @@
 import Form from '@/app/dashboard/stock/create-form';
-import Breadcrumbs from '@/app/dashboard/stock/breadcrumbs';
+import Breadcrumbs from '@/app/dashboard/stock/breadcrums';
 
 export default async function Page() {
   return (

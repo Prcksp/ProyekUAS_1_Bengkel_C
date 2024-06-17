@@ -72,7 +72,7 @@ export default function Form({ montir }: { montir: MontirForm }) {
                 id="keahlian"
                 name="keahlian"
                 type="text"
-                placeholder="Fill Plate Number"
+                placeholder="Fill Skill"
                 defaultValue={montir.keahlian}
                 className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
               />
@@ -91,7 +91,7 @@ export default function Form({ montir }: { montir: MontirForm }) {
           className="items-center bg-yellow-400 hover:bg-yellow-600"
           type="submit"
         >
-          Edit Customer
+          Edit Montir
         </Button>
       </div>
     </form>
